@@ -2,16 +2,21 @@ import React, { useState, useEffect } from 'react';
 import NewSongForm from './NewSongForm';
 
 const SongList = () => {
-    useEffect(()=>{
-        console.log('i am inside use effect');
-    })
-
     const [songs, setSongs] = useState([
         { title: 'riyad', id: 1 },
         { title: 'ahsan', id: 2 },
     ])
-
     const [age , setAge] = useState(20); 
+
+    useEffect(() => {
+        console.log('i am inside use effect');
+    }, [songs])
+    //runs when songs changes
+
+    useEffect(() => {
+        console.log('i am inside use effect');
+    }, [age])
+    //runs when age changes
         
 
     const addSong = (title) => {
